@@ -52,7 +52,7 @@ class _DemoPageState extends BaseStatefulWidget<DemoPage, DemoBloc> {
   }
 
   @override
-  Widget buildWidgets(BuildContext context) {
+  Widget buildBody(BuildContext context) {
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,

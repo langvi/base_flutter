@@ -45,7 +45,7 @@ class _PersonPageState extends BaseStatefulWidget<PersonPage, PersonBloc> {
   }
 
   @override
-  Widget buildWidgets(BuildContext context) {
+  Widget buildBody(BuildContext context) {
     return Center(
       child: Column(
         children: [Text('NEw page')],

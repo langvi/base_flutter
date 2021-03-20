@@ -1,9 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
+
 abstract class BaseBloc<E, S> extends Bloc<E, S> {
   Function(String error, StackTrace stacktrace) onErrorCallBack;
   BaseBloc(initialState) : super(initialState);
+
+  /// catch lỗi khi gọi đến API sử dụng thư viện Dio
   void setOnErrorListener(
       Function(String error, StackTrace stacktrace) onErrorCallBack) {
     this.onErrorCallBack = onErrorCallBack;
