@@ -1,10 +1,10 @@
-part of 'person_bloc.dart';
+// part of 'person_bloc.dart';
 
-abstract class PersonEvent extends Equatable {
-  const PersonEvent();
+// abstract class PersonEvent extends Equatable {
+//   const PersonEvent();
 
-  @override
-  List<Object> get props => [];
-}
+//   @override
+//   List<Object> get props => [];
+// }
 
-class ActionDemo extends PersonEvent {}
+// class ActionDemo extends PersonEvent {}

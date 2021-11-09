@@ -37,7 +37,7 @@ class _ReadJsonState extends State<ReadJson> {
               onPressed: () async {
                 print('start write');
                 await writeFile(dataLanguage);
-                 print('end write');
+                print('end write');
               },
               child: Text('Write'),
             ),
@@ -53,7 +53,7 @@ class _ReadJsonState extends State<ReadJson> {
   }
 
   void getDataFromFileJson() async {
-    Map<String, dynamic> dmap = await parseJsonFromAssets('assets/vi.json');
+    Map<String, dynamic> dmap = await parseJsonFromAssets('assets/vi_1.json');
     List<String> values = [];
     List<String> keys = [];
     List<String> valuesConvert = [];
@@ -61,6 +61,7 @@ class _ReadJsonState extends State<ReadJson> {
       keys.add(key);
       values.add(value);
     });
+    print('start');
     for (int i = 0; i < values.length; i++) {
       String result = await translate(values[i]);
       valuesConvert.add(result);
@@ -69,7 +70,7 @@ class _ReadJsonState extends State<ReadJson> {
       dataLanguage.putIfAbsent(
           '"${keys[index]}"', () => '"${valuesConvert[index]}"');
     }
-    print(data.toString());
+    print(dataLanguage.toString());
   }
 
   Future<Map<String, dynamic>> parseJsonFromAssets(String assetsPath) async {
@@ -79,8 +80,8 @@ class _ReadJsonState extends State<ReadJson> {
   }
 
   Future<String> translate(String value) async {
-    var str = await translator.translate(value, from: 'vi', to: 'ko');
-    String result = str.text;
-    return result.replaceAll(RegExp(r' '), '');
+    var str = await translator.translate(value, from: 'vi', to: 'en');
+    return str.text;
+    // return result.replaceAll(RegExp(r' '), '');
   }
 }

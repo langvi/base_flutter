@@ -1,10 +1,10 @@
-part of 'demo_bloc.dart';
+// part of 'demo_bloc.dart';
 
-abstract class DemoEvent extends Equatable {
-  const DemoEvent();
+// abstract class DemoEvent extends Equatable {
+//   const DemoEvent();
 
-  @override
-  List<Object> get props => [];
-}
+//   @override
+//   List<Object> get props => [];
+// }
 
-class Counter extends DemoEvent {}
+// class Counter extends DemoEvent {}
